@@ -2,7 +2,7 @@
 
 ## original info
 
-git url : https://www.youtube.com/@devaslife
+git url : https://www.youtube.com/@devaslife   
 YOUTUBE : https://github.com/craftzdog/dotfiles-public
 
 ### prerequirement
