@@ -1,9 +1,9 @@
 local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
 
-saga.init_lsp_saga {
-    finder_request_timeout = 5000,
-}
+-- saga.init_lsp_saga {
+--     finder_request_timeout = 5000,
+-- }
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
