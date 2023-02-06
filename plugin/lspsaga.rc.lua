@@ -5,10 +5,25 @@ if (not status) then return end
 --     finder_request_timeout = 5000,
 -- }
 
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
-vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+saga.setup({
+
+    preview = {
+        lines_above = 0,
+        lines_below = 10,
+    },
+    scroll_preview = {
+        scroll_down = "<C-f>",
+        scroll_up = "<C-b>",
+    },
+    request_timeout = 5000,
+})
+
+local keymap = vim.keymap.set
+
+-- local opts = { noremap = true, silent = true }
+keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>')
+keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>')
+keymap('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>')
+keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>')
+keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>')
+keymap('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>')
