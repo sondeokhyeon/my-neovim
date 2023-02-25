@@ -21,14 +21,35 @@ ts.setup {
         "javascript",
         "typescript",
         "lua",
-        "svelte"
+        "svelte",
+        "dart",
+        "markdown",
+        "markdown_inline",
+        "dot",
     },
     autotag = {
         enable = true,
     },
     context_commentstring = {
-        enable = true
-    }
+        enable = true,
+        enable_autocmd = false,
+        config = {
+            javascript = {
+                __default = '// %s',
+                jsx_element = '{/* %s */}',
+                jsx_fragment = '{/* %s */}',
+                jsx_attribute = '// %s',
+                comment = '// %s',
+            },
+            typescript = {
+                __default = '// %s',
+                jsx_element = '{/* %s */}',
+                jsx_fragment = '{/* %s */}',
+                jsx_attribute = '// %s',
+                comment = '// %s',
+            },
+        }
+    },
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()

@@ -11,3 +11,6 @@ gitBlameLine.setup({
     enable_cursor_hold = false
   }
 })
+
+local keymap = vim.keymap.set
+keymap('n', 'gl', '<Cmd>GitBlameLineToggle<CR>')

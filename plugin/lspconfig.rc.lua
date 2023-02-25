@@ -88,37 +88,43 @@ nvim_lsp.sourcekit.setup {
     on_attach = on_attach,
 }
 
-nvim_lsp.sumneko_lua.setup {
-    on_attach = on_attach,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-            },
+-- nvim_lsp.lua_language_server.setup {
+--     on_attach = on_attach,
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 -- Get the language server to recognize the `vim` global
+--                 globals = { 'vim' },
+--             },
+--
+--             workspace = {
+--                 -- Make the server aware of Neovim runtime files
+--                 library = vim.api.nvim_get_runtime_file("", true),
+--                 checkThirdParty = false
+--             },
+--         },
+--     },
+-- }
 
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false
-            },
-        },
-    },
-}
+-- nvim_lsp.sumneko_lua.setup {
+--     on_attach = on_attach,
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 -- Get the language server to recognize the `vim` global
+--                 globals = { 'vim' },
+--             },
+--
+--             workspace = {
+--                 -- Make the server aware of Neovim runtime files
+--                 library = vim.api.nvim_get_runtime_file("", true),
+--                 checkThirdParty = false
+--             },
+--         },
+--     },
+-- }
 
-nvim_lsp.tailwindcss.setup {
-    settings = {
-        tailwindCSS = {
-            experimental = {
-                classRegex = {
-                    'tw([^])',
-                    'tw="([^"])',
-                    'tw={"([^"}])',
-                },
-            },
-        },
-    }
-}
+nvim_lsp.tailwindcss.setup {}
 
 nvim_lsp.cssls.setup {
     cmd = { "vscode-css-language-server", "--stdio" },
@@ -171,7 +177,7 @@ local configs = require 'lspconfig.configs'
 if not configs.ls_emmet then
     configs.ls_emmet = {
         default_config = {
-            cmd = { 'ls_emmet', '--stdio' };
+            cmd = { 'ls_emmet', '--stdio' },
             filetypes = {
                 'html',
                 'css',
@@ -192,15 +198,14 @@ if not configs.ls_emmet then
                 'hbs',
                 'handlebars',
                 'dart',
-            };
+            },
             root_dir = function(fname)
                 return vim.loop.cwd()
-            end;
-            settings = {};
-        };
+            end,
+            settings = {},
+        },
     }
     nvim_lsp.ls_emmet.setup { capabilities = capabilities }
-
 end
 -- Diagnostic symbols in the sign column (gutter)
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
