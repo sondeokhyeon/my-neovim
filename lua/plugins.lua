@@ -44,6 +44,7 @@ packer.startup(function(use)
     use 'windwp/nvim-ts-autotag'
     use 'norcalli/nvim-colorizer.lua'
     use 'folke/zen-mode.nvim'
+    use 'folke/tokyonight.nvim'
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -65,7 +66,7 @@ packer.startup(function(use)
     }
     use "lukas-reineke/indent-blankline.nvim"
 
-    use  'm4xshen/smartcolumn.nvim'
+    use 'm4xshen/smartcolumn.nvim'
 
     use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' } --flutter
     use {
@@ -79,8 +80,8 @@ packer.startup(function(use)
     use {
         "ThePrimeagen/refactoring.nvim",
         requires = {
-            {"nvim-lua/plenary.nvim"},
-            {"nvim-treesitter/nvim-treesitter"}
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
         }
     }
 end)
