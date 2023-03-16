@@ -2,8 +2,8 @@
 
 ## original info
 
-git url : https://www.youtube.com/@devaslife   
-YOUTUBE : https://github.com/craftzdog/dotfiles-public
+git url :https://github.com/craftzdog/dotfiles-public   
+YOUTUBE : https://www.youtube.com/@devaslife   
 
 ### prerequirement
 
@@ -31,8 +31,13 @@ ubnutu
 
 mac : ~/.config/nvim/
 
-### : lsp-install
+### packer install 
+https://github.com/wbthomason/packer.nvim#quickstart
 
+### vim-plug install 
+https://github.com/junegunn/vim-plug
+
+### : lsp-install
 1. :packer install
 2. :mason
 3. choose lsp
