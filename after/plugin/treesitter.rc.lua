@@ -35,22 +35,20 @@ ts.setup {
         enable_autocmd = false,
         config = {
             javascript = {
-                __default = '// %s',
                 jsx_element = '{/* %s */}',
                 jsx_fragment = '{/* %s */}',
                 jsx_attribute = '// %s',
                 comment = '// %s',
             },
             typescript = {
-                __default = '// %s',
-                jsx_element = '{/* %s */}',
-                jsx_fragment = '{/* %s */}',
-                jsx_attribute = '// %s',
+                tsx_element = '{/* %s */}',
+                tsx_fragment = '{/* %s */}',
+                tsx_attribute = '// %s',
                 comment = '// %s',
             },
         }
     },
 }
 
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
+-- local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+-- parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
