@@ -13,12 +13,12 @@ packer.startup(function(use)
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
     use 'nvim-lualine/lualine.nvim' -- Statusline
-    use 'nvim-lua/plenary.nvim' -- Common utilities
-    use 'onsails/lspkind-nvim' -- vscode-like pictograms
-    use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-    use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-    use 'hrsh7th/nvim-cmp' -- Completion
-    use 'neovim/nvim-lspconfig' -- LSP
+    use 'nvim-lua/plenary.nvim'     -- Common utilities
+    use 'onsails/lspkind-nvim'      -- vscode-like pictograms
+    use 'hrsh7th/cmp-buffer'        -- nvim-cmp source for buffer words
+    use 'hrsh7th/cmp-nvim-lsp'      -- nvim-cmp source for neovim's built-in LSP
+    use 'hrsh7th/nvim-cmp'          -- Completion
+    use 'neovim/nvim-lspconfig'     -- LSP
     use({
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
@@ -74,7 +74,7 @@ packer.startup(function(use)
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
     }
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     use {
@@ -84,4 +84,6 @@ packer.startup(function(use)
             { "nvim-treesitter/nvim-treesitter" }
         }
     }
+    use 'Mofiqul/dracula.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 end)
