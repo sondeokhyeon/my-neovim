@@ -45,10 +45,7 @@ packer.startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
     use 'folke/zen-mode.nvim'
     use 'folke/tokyonight.nvim'
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
+    use { 'iamcco/markdown-preview.nvim' }
     -- use 'github/copilot.vim'
     use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
 
@@ -86,4 +83,5 @@ packer.startup(function(use)
     }
     use 'Mofiqul/dracula.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
+    use "Djancyp/better-comments.nvim"
 end)
