@@ -84,4 +84,12 @@ packer.startup(function(use)
     use 'Mofiqul/dracula.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
     use "Djancyp/better-comments.nvim"
+    use { "sitiom/nvim-numbertoggle" } --
+    use {
+        "narutoxy/dim.lua",
+        requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+        config = function()
+            require('dim').setup({})
+        end
+    }
 end)
