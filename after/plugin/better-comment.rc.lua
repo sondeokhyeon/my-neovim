@@ -11,7 +11,21 @@ betterComment.Setup({
             virtual_text = "",
         },
         {
+            name = "todo",
+            fg = "white",
+            bg = "#0a7aca",
+            bold = true,
+            virtual_text = "",
+        },
+        {
             name = "FIX",
+            fg = "white",
+            bg = "#f44747",
+            bold = true,
+            virtual_text = "",
+        },
+        {
+            name = "fix",
             fg = "white",
             bg = "#f44747",
             bold = true,
@@ -24,6 +38,12 @@ betterComment.Setup({
             bold = true,
             virtual_text = "",
         },
-
+        {
+            name = "xxx",
+            fg = "#FFA500",
+            bg = "",
+            bold = true,
+            virtual_text = "",
+        },
     }
 })
