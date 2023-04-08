@@ -92,4 +92,5 @@ packer.startup(function(use)
             require('dim').setup({})
         end
     }
+    use("danielvolchek/tailiscope.nvim") -- tailwind
 end)
