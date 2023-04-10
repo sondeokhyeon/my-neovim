@@ -42,3 +42,7 @@ https://github.com/junegunn/vim-plug
 2. :mason
 3. choose lsp
 4. install
+
+### tpm(tmux plugin) install 
+https://github.com/tmux-plugins/tpm
+
