@@ -33,6 +33,16 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
--- number Toggle 
+-- number Toggle
 keymap.set('n', '<Leader>[', ':set number norelativenumber')
 keymap.set('n', '<Leader>]', ':set number relativenumber')
+
+-- Buffer
+keymap.set("n", "<", "<CMD>bprevious<CR>")
+keymap.set("n", ">", "<CMD>bnext<CR>")
+
+-- Save
+keymap.set("n", "<leader>w", "<CMD>update<CR>")
+
+-- Quit
+keymap.set("n", "<leader>q", "<CMD>q<CR>")

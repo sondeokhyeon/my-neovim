@@ -78,3 +78,10 @@ vim.keymap.set("n", "sf", function()
         layout_config = { height = 40 }
     })
 end)
+vim.keymap.set("n", ";s", function()
+    builtin.git_status()
+end)
+
+vim.keymap.set("n", ";c", function()
+    builtin.git_commits()
+end)
