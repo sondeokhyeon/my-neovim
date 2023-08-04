@@ -20,7 +20,7 @@ prettier.setup({
         "typescriptreact",
         "json",
         "scss",
-        "less"
+        "less",
     },
-    -- config_precedence = "prefer-file"
+    config_precedence = "prefer-file"
 })

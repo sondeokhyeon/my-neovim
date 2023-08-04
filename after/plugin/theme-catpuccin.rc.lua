@@ -6,7 +6,7 @@ cpc.setup({
     background = {
         -- :h background
         light = "latte",
-        dark = "mocha",
+        dark = "frappe",
     },
     transparent_background = false,
     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
