@@ -153,6 +153,36 @@ nvim_lsp.pyright.setup {
     capabilities = capabilities
 }
 
+nvim_lsp.dartls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    default_config = {
+--         -- cmd = { "dart", analysis_server_snapshot_path(), "--protocol=lsp" };
+--         cmd = { "dart", "/opt/homebrew/Cellar/dart-sdk/2.18.5/libexec/bin/snapshots/analysis_server.dart.snapshot",
+--             "--client-id my-editor.my-plugin --client-version 1.2", "--protocol=lsp" };
+        filetypes = { "dart" };
+        root_dir = nvim_lsp.util.root_pattern("pubspec.yaml");
+        init_options = {
+            onlyAnalyzeProjectsWithOpenFiles = "false",
+            suggestFromUnimportedLibraries = "true",
+            closingLabels = "true",
+            outline = "true",
+            fluttreOutline = "false"
+        };
+    };
+    docs = {
+        vscode = "Dart-Code.dart-code";
+        description = [[
+            https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec
+            Language server for dart.
+        ]];
+        default_config = {
+            root_dir = [[root_pattern("pubspec.yaml")]];
+        };
+    };
+})
+
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
