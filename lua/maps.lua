@@ -1,7 +1,5 @@
 local keymap = vim.keymap
 
-keymap.set('n', 'x', '"_x')
-
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
@@ -17,11 +15,12 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- New tab
 keymap.set('n', 'te', ':tabedit')
+
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+
 -- Move window
-keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
@@ -38,11 +37,14 @@ keymap.set('n', '<Leader>[', ':set number norelativenumber')
 keymap.set('n', '<Leader>]', ':set number relativenumber')
 
 -- Buffer
-keymap.set("n", "<", "<CMD>bprevious<CR>")
-keymap.set("n", ">", "<CMD>bnext<CR>")
+keymap.set("n", "<", "<CMD>b#<CR>")
+keymap.set("n", ">", "<CMD>n#<CR>")
 
 -- Save
 keymap.set("n", "<leader>w", "<CMD>update<CR>")
 
 -- Quit
 keymap.set("n", "<leader>q", "<CMD>q<CR>")
+
+-- Formatting 
+keymap.set("n", "FF", "<CMD>lua vim.lsp.buf.format()<CR>")
