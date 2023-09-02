@@ -18,7 +18,6 @@ keymap('n', '<C-space>', '<cmd>Lspsaga code_action<CR>')
 keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>')
 keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>')
 keymap('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>')
-keymap('n', 'ga', '<Cmd>Lspsaga code_action<CR>')
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
