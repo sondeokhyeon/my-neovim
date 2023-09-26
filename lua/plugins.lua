@@ -93,4 +93,21 @@ packer.startup(function(use)
         end
     }
     use("danielvolchek/tailiscope.nvim") -- tailwind
+
+    use { "ibhagwan/fzf-lua",
+        -- optional for icon support
+        requires = { "nvim-tree/nvim-web-devicons" }
+    }
+
+    use "sindrets/diffview.nvim" -- diffView
+
+    use { "ellisonleao/gruvbox.nvim" }
+
+    use({
+        'ramojus/mellifluous.nvim',
+        config = function()
+            require 'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
+            vim.cmd('colorscheme mellifluous')
+        end,
+    })
 end)
