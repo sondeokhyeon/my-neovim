@@ -74,7 +74,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 
 nvim_lsp.tsserver.setup {
-    on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" },
