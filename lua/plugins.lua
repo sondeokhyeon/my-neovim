@@ -99,9 +99,9 @@ packer.startup(function(use)
         requires = { "nvim-tree/nvim-web-devicons" }
     }
 
-    use "sindrets/diffview.nvim" -- diffView
+    use "sindrets/diffview.nvim"       -- diffView
 
-    use { "ellisonleao/gruvbox.nvim" }
+    use { "ellisonleao/gruvbox.nvim" } -- theme
 
     use({
         'ramojus/mellifluous.nvim',
@@ -109,5 +109,9 @@ packer.startup(function(use)
             require 'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
             vim.cmd('colorscheme mellifluous')
         end,
-    })
+    })                                                                     -- theme
+
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } } -- nvim-dap
+
+    use 'mfussenegger/nvim-lint'                                           -- lint
 end)

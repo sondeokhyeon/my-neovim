@@ -2,7 +2,7 @@ local status, cpc = pcall(require, "catppuccin")
 if (not status) then return end
 
 cpc.setup({
-    flavour = "frappe", -- latte, frappe, macchiato, mocha
+    flavour = "latte", -- latte, frappe, macchiato, mocha
     background = {
         -- :h background
         light = "latte",
@@ -14,7 +14,7 @@ cpc.setup({
     dim_inactive = {
         enabled = false,
         shade = "dark",
-        percentage = 0.15,
+        percentage = 1.15,
     },
     no_italic = false, -- Force no italic
     no_bold = false,   -- Force no bold
