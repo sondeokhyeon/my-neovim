@@ -114,4 +114,10 @@ packer.startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } } -- nvim-dap
 
     use 'mfussenegger/nvim-lint'                                           -- lint
+
+    use 'nanotee/sqls.nvim'
+
+    use('Tsuzat/NeoSolarized.nvim') -- theme
+
+    use 'shaunsingh/solarized.nvim'
 end)

@@ -25,13 +25,13 @@ local on_attach = function(client, bufnr)
     -- formatting
 
     if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-       group = vim.api.nvim_create_augroup("Format", { clear = true }),
-       buffer = bufnr,
-       callback = function()
-            vim.lsp.buf.format()
-        end
-    })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("Format", { clear = true }),
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format()
+            end
+        })
     end
 end
 
@@ -156,39 +156,45 @@ nvim_lsp.dartls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     default_config = {
---         -- cmd = { "dart", analysis_server_snapshot_path(), "--protocol=lsp" };
---         cmd = { "dart", "/opt/homebrew/Cellar/dart-sdk/2.18.5/libexec/bin/snapshots/analysis_server.dart.snapshot",
---             "--client-id my-editor.my-plugin --client-version 1.2", "--protocol=lsp" };
-        filetypes = { "dart" };
-        root_dir = nvim_lsp.util.root_pattern("pubspec.yaml");
+        --         -- cmd = { "dart", analysis_server_snapshot_path(), "--protocol=lsp" };
+        --         cmd = { "dart", "/opt/homebrew/Cellar/dart-sdk/2.18.5/libexec/bin/snapshots/analysis_server.dart.snapshot",
+        --             "--client-id my-editor.my-plugin --client-version 1.2", "--protocol=lsp" };
+        filetypes = { "dart" },
+        root_dir = nvim_lsp.util.root_pattern("pubspec.yaml"),
         init_options = {
             onlyAnalyzeProjectsWithOpenFiles = "false",
             suggestFromUnimportedLibraries = "true",
             closingLabels = "true",
             outline = "true",
             fluttreOutline = "false"
-        };
-    };
+        },
+    },
     docs = {
-        vscode = "Dart-Code.dart-code";
+        vscode = "Dart-Code.dart-code",
         description = [[
             https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec
             Language server for dart.
-        ]];
+        ]],
         default_config = {
-            root_dir = [[root_pattern("pubspec.yaml")]];
-        };
-    };
+            root_dir = [[root_pattern("pubspec.yaml")]],
+        },
+    },
 })
+
+nvim_lsp.sqlls.setup {
+    on_attach = function(client, bufnr)
+        require('sqlls').on_attach(client, bufnr)
+    end
+}
 
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    update_in_insert = false,
-    virtual_text = { spacing = 4, prefix = "●" },
-    severity_sort = true,
-}
+        underline = true,
+        update_in_insert = false,
+        virtual_text = { spacing = 4, prefix = "●" },
+        severity_sort = true,
+    }
 )
 
 local configs = require 'lspconfig.configs'

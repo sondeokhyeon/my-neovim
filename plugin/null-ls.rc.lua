@@ -19,11 +19,11 @@ null_ls.setup({
                 return utils.root_has_file(".eslintrc") -- change file extension if you use something else
             end,
         }),
-        formatting.prettier.with({
-            condition = function(utils)
-                return utils.root_has_file('.prettierrc')
-            end,
-        })
+        -- formatting.prettier.with({
+        --     condition = function(utils)
+        --         return utils.root_has_file('.prettierrc')
+        --     end,
+        -- })
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
