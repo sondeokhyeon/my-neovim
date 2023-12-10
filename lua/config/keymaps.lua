@@ -64,4 +64,8 @@ keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
 
-vim.keymap.set("n", "<leader>rn", ":IncRename ")
+-- ReName
+keymap.set("n", "<leader>rn", ":IncRename ")
+
+-- gitBlameLine
+keymap.set("n", "gl", "<Cmd>GitBlameLineToggle<CR>")
