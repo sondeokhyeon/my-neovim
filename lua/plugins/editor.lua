@@ -35,9 +35,6 @@ return {
         left_padding_size = 5,
         enable_cursor_hold = false,
       },
-      init = function()
-        vim.keymap.set("n", "gl", "<Cmd>GitBlameLineToggle<CR>")
-      end,
     },
   },
   {
