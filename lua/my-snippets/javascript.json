@@ -1,0 +1,11 @@
+{
+  "module_className": {
+    "prefix": "mc",
+    "body": "className={${1}}"
+  },
+  "classname": {
+    "prefix": "cN",
+    "body": "className=\"${1}\"",
+    "description": "classname"
+  }
+}
