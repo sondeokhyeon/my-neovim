@@ -69,3 +69,9 @@ keymap.set("n", "<leader>rn", ":IncRename ")
 
 -- gitBlameLine
 keymap.set("n", "gl", "<Cmd>GitBlameLineToggle<CR>")
+
+-- lineMove
+keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
+keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
+keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
