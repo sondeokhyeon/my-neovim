@@ -129,8 +129,6 @@ prompt_context() {}
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-alias dev="cd /Users/sdh/dev/lawform/"
-
 eval $(thefuck --alias)
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
@@ -139,6 +137,7 @@ alias vim="nvim"
 alias pnr="git pull && npm run dev"
 alias pn2="git pull && npm run dev2"
 alias gap="git pull && git submodule update --remote"
+alias cr="clear"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
@@ -147,4 +146,3 @@ export PATH=/Users/sdh/Library/Python/3.9/bin/:$PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias ls="colorls"
