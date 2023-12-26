@@ -7,5 +7,20 @@
     "prefix": "cN",
     "body": "className=\"${1}\"",
     "description": "classname"
+  },
+  "react_basic_snippet": {
+    "prefix": "rbs",
+    "body": [
+      "const ${TM_FILENAME_BASE} = () => {",
+      "    return (",
+      "        <div>",
+      "            ${1}",
+      "        </div>        ",
+      "    )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE};"
+    ],
+    "description": "react_basic_snippet"
   }
 }
