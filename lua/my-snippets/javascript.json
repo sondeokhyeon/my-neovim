@@ -24,14 +24,24 @@
     ],
     "description": "react_basic_snippet"
   },
-  "log": {
+  "Log": {
     "prefix": "log",
     "body": "console.log(${1})",
+    "description": "console.log"
+  },
+  "Logo": {
+    "prefix": "log",
+    "body": "console.log({'${1} : ', ${1}})",
     "description": "console.log"
   },
   "state": {
     "prefix": "useS",
     "body": "const [${1}, ${2}] = useState${3}()",
     "description": "init useState"
+  },
+  "effect": {
+    "prefix": "useE",
+    "body": "useEffect${1}(() => {${2}},[])",
+    "description": "init useEffect"
   }
 }
