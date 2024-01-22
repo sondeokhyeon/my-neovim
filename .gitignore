@@ -1,3 +1,8 @@
 plugged
 plugin/packer_compiled.lua
 .luarc.json
+*.json
+.DS_STORE
+LICENSE
+init.lua
+stylua.toml
