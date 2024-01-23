@@ -4,5 +4,5 @@ plugin/packer_compiled.lua
 *.json
 .DS_STORE
 LICENSE
-init.lua
+./init.lua
 stylua.toml
