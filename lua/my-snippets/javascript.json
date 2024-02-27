@@ -43,5 +43,62 @@
     "prefix": "useE",
     "body": "useEffect${1}(() => {${2}},[])",
     "description": "init useEffect"
+  },
+  "arrow_function": {
+    "prefix": "awf",
+    "body": "const ${1} = () => { ${2} }",
+    "description": "init arrow Function"
+  },
+  "arrow_react_component": {
+    "prefix": "rfc",
+    "body": [
+      "export const ${1} = () => {",
+      "",
+      "   return (",
+      "    <div>${2}</div>",
+      "   )",
+      "",
+      "}"
+    ],
+    "description": "init React Function Componenet"
+  },
+  "log_with_banner1": {
+    "prefix": "bl1",
+    "body": [
+      "console.log('#########################')",
+      "console.log('#########################')",
+      "console.log('#########################')",
+      "console.log('${1} : ', ${1})",
+      "console.log('#########################')",
+      "console.log('#########################')",
+      "console.log('#########################')"
+    ],
+    "description": "Banner log1"
+  },
+  "log_with_banner2": {
+    "prefix": "bl2",
+    "body": [
+      "console.log('========================')",
+      "console.log('========================')",
+      "console.log('========================')",
+      "console.log('${1} : ', ${1})",
+      "console.log('========================')",
+      "console.log('========================')",
+      "console.log('========================')"
+    ],
+    "description": "Banner log2"
+  },
+  "log_with_banner3": {
+    "prefix": "bl3",
+    "body": [
+      "console.log('++++++++++++++++++++++++')",
+      "console.log('++++++++++++++++++++++++')",
+      "console.log('++++++++++++++++++++++++')",
+      "console.log('${1} : ', ${1})",
+      "console.log('++++++++++++++++++++++++')",
+      "console.log('++++++++++++++++++++++++')",
+      "console.log('++++++++++++++++++++++++')"
+    ],
+    "description": "Banner log2"
   }
 }
