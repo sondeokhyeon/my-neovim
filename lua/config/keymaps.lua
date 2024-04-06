@@ -5,14 +5,9 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-keymap.set("n", "x", '"_x')
-
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
-
--- Delete a word backwards
-keymap.set("n", "dw", 'vb"_d')
 
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
@@ -50,11 +45,8 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 keymap.set("n", "<Leader>[", ":set number norelativenumber")
 keymap.set("n", "<Leader>]", ":set number relativenumber")
 
--- Save
-keymap.set("n", "<leader>w", "<CMD>update<CR>")
-
 -- Quit
-keymap.set("n", "<leader>q", "<CMD>q<CR>")
+keymap.set("n", "<leader>qx", "<CMD>q<CR>")
 
 -- Formatting
 keymap.set("n", "FF", "<CMD>lua vim.lsp.buf.format()<CR>")
@@ -69,6 +61,12 @@ keymap.set("n", "<leader>rn", ":IncRename ")
 
 -- gitBlameLine
 keymap.set("n", "gl", "<Cmd>GitBlameLineToggle<CR>")
+
+-- Copilot Chat
+keymap.set("n", "<leader>Cc", "<CMD>CopilotChatToggle<CR>")
+
+-- tab split definition
+keymap.set("n", "gdt", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
 
 -- lineMove
 keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
