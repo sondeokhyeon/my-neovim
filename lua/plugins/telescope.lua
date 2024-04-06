@@ -125,7 +125,8 @@ return {
       }
       opts.extensions = {
         file_browser = {
-          theme = "dropdown",
+          theme = "ivy",
+          layout_strategy = "horizontal",
           -- disables netrw and use telescope-file-browser in its place
           sorting_strategy = "ascending",
           hijack_netrw = true,
