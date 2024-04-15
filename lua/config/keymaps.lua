@@ -19,13 +19,8 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
 keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 
--- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
-
 -- New tab
 keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
@@ -46,7 +41,7 @@ keymap.set("n", "<Leader>[", ":set number norelativenumber")
 keymap.set("n", "<Leader>]", ":set number relativenumber")
 
 -- Quit
-keymap.set("n", "<leader>qx", "<CMD>q<CR>")
+keymap.set("n", "qq", "<CMD>q<CR>")
 
 -- Formatting
 keymap.set("n", "FF", "<CMD>lua vim.lsp.buf.format()<CR>")
@@ -69,7 +64,7 @@ keymap.set("n", "<leader>Cc", "<CMD>CopilotChatToggle<CR>")
 keymap.set("n", "gdt", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
 
 -- lineMove
-keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
-keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
-keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
-keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+keymap.set("n", "<C-k>", ":m .-2<CR>==") -- move line down(n)
+keymap.set("n", "<C-j>", ":m .+1<CR>==") -- move line up(n)
+keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
