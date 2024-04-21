@@ -133,16 +133,23 @@ eval $(thefuck --alias)
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 alias vim="nvim"
+alias vi="nvim"
 
 alias pnr="git pull && npm run dev"
 alias pn2="git pull && npm run dev2"
 alias gap="git pull && git submodule update --remote"
 alias cr="clear"
+alias harlequin="harlequin --theme emacs"
+alias gbc="git branch "
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-export PATH=/Users/sdh/Library/Python/3.9/bin/:$PATH
+#export PATH=/Users/sdh/Library/Python/3.9/bin/:$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+#export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
