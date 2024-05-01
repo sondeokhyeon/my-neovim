@@ -56,12 +56,15 @@ return {
             },
           },
         },
+        -- lua_ls
         cssls = {},
+        -- cssls
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
         },
+        --tailwindcss
         tsserver = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -77,7 +80,9 @@ return {
           cmd = { "typescript-language-server", "--stdio" },
           single_file_support = true,
         },
+        -- tsserver
         html = {},
+        -- html
         emmet_ls = {
           filetypes = {
             "html",
@@ -99,6 +104,38 @@ return {
             },
           },
         },
+        -- emmet_ls
+        yamlls = {
+          settings = {
+            yaml = {
+              schemas = {
+                ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+                ["https://json.schemastore.org/ansible-stable-2.9.json"] = "/*.ansible.yaml",
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                -- schemas = {
+                --   kubernetes = "/*.k8s.yaml",
+                --   ansible = "/*.ansible.yaml",
+                --   github = "/.github/workflows/*",
+                -- },
+              },
+            },
+          },
+        },
+        -- yamlls
+        docker_compose_language_service = {
+          cmd = { "docker-compose-language-server", "--stdio" },
+          filetypes = { "yaml.docker-compose" },
+          root_pattern = { "docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml" },
+          single_file_support = true,
+        },
+        -- docker_compose_language_service
+        dockerls = {
+          cmd = { "docker-langserver", "--stdio" },
+          filetypes = { "dockerfile" },
+          root_pattern = { "Dockerfile" },
+          single_file_support = true,
+        },
+        -- dockerls
       },
     },
   },
