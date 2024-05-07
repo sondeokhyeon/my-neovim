@@ -206,5 +206,5 @@ _fzf_comprun() {
 
 # eza
 ls_time_style_long="+%Y-%m-%d %H:%M:%S "
-alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions --tree --level=1"
-alias ll="eza --color=always --git --long --tree --icons=always --level=1 --time-style='${ls_time_style_long}'"
+alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions --tree --level=1 --all"
+alias ll="eza --color=always --git --long --tree --icons=always --level=1 --all --time-style='${ls_time_style_long}'"
