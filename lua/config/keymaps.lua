@@ -68,3 +68,10 @@ keymap.set("n", "<C-k>", ":m .-2<CR>==") -- move line down(n)
 keymap.set("n", "<C-j>", ":m .+1<CR>==") -- move line up(n)
 keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+
+-- tmux move
+keymap.set("n", "<S-K>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
+keymap.set("n", "<S-J>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
+keymap.set("n", "<S-H>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
+keymap.set("n", "<S-L>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
+keymap.set("n", "<S-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true })
