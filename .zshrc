@@ -136,10 +136,9 @@ alias vim="nvim"
 alias vi="nvim"
 
 alias pnr="git pull && npm run dev"
-alias pn2="git pull && npm run dev2"
 alias gap="git pull && git submodule update --remote"
 alias cr="clear"
-alias harlequin="harlequin --theme emacs"
+alias hq="harlequin --theme emacs"
 alias gbc="git branch "
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
@@ -168,7 +167,9 @@ eval "$(fzf --zsh)"
 
 # -- Use fd instead of fzf --
 
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+# backup 
+# export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git --exclude node_modules --exclude .next"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 
