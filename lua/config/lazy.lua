@@ -13,14 +13,14 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      -- opts = {
-      -- colorscheme = "catppuccin",
-      -- colorscheme = "solarized-osaka-day",
-      -- news = {
-      --   lazyvim = true,
-      --   neovim = true,
-      -- },
-      -- },
+      opts = {
+        -- colorscheme = "catppuccin",
+        colorscheme = "tokyonight-day",
+        -- news = {
+        --   lazyvim = true,
+        --   neovim = true,
+        -- },
+      },
     },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
