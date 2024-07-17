@@ -123,6 +123,10 @@ source $ZSH/oh-my-zsh.sh
 #     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
 #   fi
 # }
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
 
 prompt_context() {}
 
@@ -209,3 +213,11 @@ _fzf_comprun() {
 ls_time_style_long="+%Y-%m-%d %H:%M:%S "
 alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions --tree --level=1 --all"
 alias ll="eza --color=always --git --long --tree --icons=always --level=1 --all --time-style='${ls_time_style_long}'"
+
+EDITOR="nvim"
+source <(fzf --zsh)
+
+HIST_FILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
