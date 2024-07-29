@@ -57,9 +57,6 @@ keymap.set("n", "<leader>rn", ":IncRename ")
 -- gitBlameLine
 keymap.set("n", "gl", "<Cmd>GitBlameLineToggle<CR>")
 
--- Copilot Chat
-keymap.set("n", "<leader>Cc", "<CMD>CopilotChatToggle<CR>")
-
 -- tab split definition
 keymap.set("n", "gdt", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
 
@@ -74,4 +71,3 @@ keymap.set("n", "<S-K>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
 keymap.set("n", "<S-J>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
 keymap.set("n", "<S-H>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
 keymap.set("n", "<S-L>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
-keymap.set("n", "<S-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true })
