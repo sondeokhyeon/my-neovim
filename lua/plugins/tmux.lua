@@ -11,7 +11,6 @@ return {
         down = "<C-J>",
         up = "<C-K>",
         right = "<C-L>",
-        next = "<C-Space>",
       },
     })
   end,
