@@ -41,17 +41,23 @@ return {
   },
   {
     "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
     event = "VeryLazy",
     keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+      -- { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+      -- { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
     opts = {
       options = {
         mode = "tabs",
-        -- separator_style = "slant",
-        show_buffer_close_icons = false,
+        separator_style = "thin",
+        show_buffer_close_icons = true,
         show_close_icon = false,
+        show_tab_indicators = true,
+        enforce_regular_tabs = true,
+        always_show_bufferline = true,
+        themable = true,
       },
     },
   },
