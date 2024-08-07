@@ -26,6 +26,7 @@ return {
   },
   {
     "kessejones/git-blame-line.nvim",
+    lazy = false,
     opts = {
       git = {
         default_message = "Not committed yet",
@@ -42,11 +43,5 @@ return {
     opts = {
       "*",
     },
-  },
-  {
-    "smjonas/inc-rename.nvim",
-    config = function()
-      require("inc_rename").setup()
-    end,
   },
 }
