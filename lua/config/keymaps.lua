@@ -24,11 +24,6 @@ keymap.set("n", "te", ":tabedit")
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
--- Move window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
 
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")
@@ -37,8 +32,8 @@ keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- number Toggle
-keymap.set("n", "<Leader>[", ":set number norelativenumber")
-keymap.set("n", "<Leader>]", ":set number relativenumber")
+keymap.set("n", "<Leader>n[", ":set number norelativenumber")
+keymap.set("n", "<Leader>n]", ":set number relativenumber")
 
 -- Quit
 keymap.set("n", "qq", "<CMD>q<CR>")
@@ -47,12 +42,9 @@ keymap.set("n", "qq", "<CMD>q<CR>")
 keymap.set("n", "FF", "<CMD>lua vim.lsp.buf.format()<CR>")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
-
--- ReName
-keymap.set("n", "<leader>rn", ":IncRename ")
+-- keymap.set("n", "<C-j>", function()
+--   vim.diagnostic.goto_next()
+-- end, opts)
 
 -- gitBlameLine
 keymap.set("n", "gl", "<Cmd>GitBlameLineToggle<CR>")
@@ -67,7 +59,7 @@ keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 
 -- tmux move
-keymap.set("n", "<S-K>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
-keymap.set("n", "<S-J>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
-keymap.set("n", "<S-H>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
-keymap.set("n", "<S-L>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
+keymap.set("n", "sk", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
+keymap.set("n", "sj", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
+keymap.set("n", "sh", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
+keymap.set("n", "sl", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
