@@ -35,7 +35,7 @@ return {
         severity_sort = true,
       },
       inlay_hints = {
-        enabled = false,
+        enabled = true,
       },
       -- add any global capabilities here
       capabilities = vim.lsp.protocol.make_client_capabilities(),
