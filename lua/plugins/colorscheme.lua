@@ -74,4 +74,6 @@ return {
     },
   },
   { "EdenEast/nightfox.nvim" }, -- lazy
+  { "Mofiqul/dracula.nvim" },
+  { "rmehri01/onenord.nvim" },
 }

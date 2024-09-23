@@ -2,12 +2,6 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = {
-      options = {
-        globalstatus = false,
-        -- theme = "solarized_dark",
-      },
-    },
   },
   {
     "b0o/incline.nvim",
@@ -15,7 +9,7 @@ return {
     event = "BufReadPre",
     priority = 1200,
     config = function()
-      local colors = require("solarized-osaka.colors").setup()
+      -- local colors = require("solarized-osaka.colors").setup()
       require("incline").setup({
         -- highlight = {
         --   groups = {
@@ -64,7 +58,7 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      timeout = 3000,
+      timeout = 5000,
     },
   },
   {

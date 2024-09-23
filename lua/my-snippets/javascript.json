@@ -34,6 +34,19 @@
     "body": "console.log('${1} : ', ${1})",
     "description": "console.log"
   },
+  "Log_Line": {
+    "prefix": "blog",
+    "body": "console.log('${TM_LINE_NUMBER} : ', {${1}})",
+    "description": "console.log"
+  },
+  "Log_File": {
+    "prefix": "clog",
+    "body": ["console.log('${TM_FILENAME}_#${TM_LINE_NUMBER} : ', {${1:var}});"]
+  },
+  "Log_FilePath": {
+    "prefix": "flog",
+    "body": ["console.log('${TM_FILEPATH}');"]
+  },
   "state": {
     "prefix": "useS",
     "body": "const [${1}, ${2}] = useState${3}()",
@@ -100,5 +113,44 @@
       "console.log('++++++++++++++++++++++++')"
     ],
     "description": "Banner log2"
+  },
+  "LF_ENUM_GENERATE": {
+    "prefix": "lfEg",
+    "body": [
+      "",
+      "enum ${1}TYPE_ENUM {",
+      "  // ENUM 값 추가",
+      "  NONE = \"\",",
+      "}",
+      "",
+      "export interface ${2}Props {",
+      "    // 속성 추가",
+      "}",
+      "",
+      "type ${3}Type = Record<${1}TYPE_ENUM, ${2}Props>;",
+      "",
+      "const ${4}: ${3}Type = {",
+      "  [${1}TYPE_ENUM.NONE]: {",
+      "    // 속성 추가",
+      "  },",
+      "};",
+      "",
+      "export const get${5}Type = (type: string | null | undefined) => {",
+      "  if (!type) return ${4}[${1}TYPE_ENUM.NONE];",
+      "",
+      "  if ((Object.values(${1}TYPE_ENUM) as string[]).includes(type))",
+      "    return ${4}[type as ${2}Props];",
+      "",
+      "  return ${4}[${1}TYPE_ENUM.NONE];",
+      "};",
+      "",
+      "export const useMemo${5}Type = (",
+      "  type: string | null | undefined",
+      "): ${2}Props => {",
+      "  return useMemo(() => get${5}Type(type), [type]);",
+      "};",
+      ""
+    ],
+    "description": "LF_ENUM_GENERATE"
   }
 }
