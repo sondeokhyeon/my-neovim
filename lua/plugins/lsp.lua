@@ -22,6 +22,13 @@ return {
     {
       "neovim/nvim-lspconfig",
       ---@class PluginLspOpts
+      dependencies = {
+        "mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
+      },
+      config = function()
+        require("java").setup()
+        require("lspconfig").jdtls.setup({})
+      end,
       opts = {
         diagnostics = {
           underline = true,
@@ -30,14 +37,11 @@ return {
             spacing = 4,
             source = "if_many",
             prefix = "●",
-            -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-            -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
-            -- prefix = "icons",
           },
           severity_sort = true,
         },
         inlay_hints = {
-          -- enabled = true,
+          enabled = true,
         },
         -- add any global capabilities here
         capabilities = vim.lsp.protocol.make_client_capabilities(),
@@ -147,9 +151,9 @@ return {
             root_pattern = { "Dockerfile" },
             single_file_support = true,
           },
-          -- dockerls
+          jdtls = {},
+          -- dockerls end
         }, -- servers
-        setup = {},
       }, -- opts
     },
   },
