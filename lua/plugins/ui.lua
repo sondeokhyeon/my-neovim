@@ -48,10 +48,13 @@ return {
         separator_style = "thin",
         show_buffer_close_icons = true,
         show_close_icon = false,
+        show_buffer_icons = true,
         show_tab_indicators = true,
         enforce_regular_tabs = true,
         always_show_bufferline = true,
+        auto_toggle_bufferline = true,
         themable = true,
+        toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
       },
     },
   },
