@@ -22,13 +22,15 @@ return {
     {
       "neovim/nvim-lspconfig",
       ---@class PluginLspOpts
-      dependencies = {
-        "mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
-      },
-      config = function()
-        require("java").setup()
-        require("lspconfig").jdtls.setup({})
-      end,
+      -- dependencies = {
+      --   "mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
+      -- },
+      -- config = function()
+      -- local lspConfig = require("lspconfig")
+      -- local java = require("java")
+      -- java.setup()
+      -- lspConfig.jdtls.setup({})
+      -- end,
       opts = {
         diagnostics = {
           underline = true,
@@ -151,8 +153,11 @@ return {
             root_pattern = { "Dockerfile" },
             single_file_support = true,
           },
-          jdtls = {},
           -- dockerls end
+          kotlin_language_server = {
+            cmd = { "kotlin-language-server", "--stdio" },
+            filetypes = { "kotlin" },
+          },
         }, -- servers
       }, -- opts
     },
