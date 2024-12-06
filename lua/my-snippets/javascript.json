@@ -1,163 +1,175 @@
 {
-  "module_className": {
-    "prefix": "mc",
-    "body": "className={${1}}"
-  },
-  "classname": {
-    "prefix": "cN",
-    "body": "className=\"${1}\"",
-    "description": "classname"
-  },
-  "react_basic_snippet": {
-    "prefix": "rbs",
-    "body": [
-      "const ${TM_FILENAME} = () => {",
-      "    return (",
-      "        <div>",
-      "            ${1}",
-      "        </div>        ",
-      "    )",
-      "}",
-      "",
-      "export default ${TM_FILENAME};"
-    ],
-    "description": "react_basic_snippet"
-  },
-  "Log": {
-    "prefix": "log",
-    "body": "console.log(${1})",
-    "description": "console.log"
-  },
-  "Logo": {
-    "prefix": "log",
-    "body": "console.log('${1} : ', ${1})",
-    "description": "console.log"
-  },
-  "Log_Line": {
-    "prefix": "blog",
-    "body": "console.log('${TM_LINE_NUMBER} : ', {${1}})",
-    "description": "console.log"
-  },
-  "Log_File": {
-    "prefix": "clog",
-    "body": ["console.log('${TM_FILENAME}_#${TM_LINE_NUMBER} : ', {${1:var}});"]
-  },
-  "Log_FilePath": {
-    "prefix": "flog",
-    "body": ["console.log('${TM_FILEPATH}');"]
-  },
-  "fileName": {
-    "prefix": "fn",
-    "body": "${TM_FILENAME}"
-  },
-  "filepath": {
-    "prefix": "fp",
-    "body": "${TM_FILEPATH}"
-  },
-  "state": {
-    "prefix": "useS",
-    "body": "const [${1}, ${2}] = useState${3}()",
-    "description": "init useState"
-  },
-  "effect": {
-    "prefix": "useE",
-    "body": "useEffect${1}(() => {${2}},[])",
-    "description": "init useEffect"
-  },
-  "arrow_function": {
-    "prefix": "awf",
-    "body": "const ${1} = () => { ${2} }",
-    "description": "init arrow Function"
-  },
-  "arrow_react_component": {
-    "prefix": "rfc",
-    "body": [
-      "export const ${1} = () => {",
-      "",
-      "   return (",
-      "    <div>${2}</div>",
-      "   )",
-      "",
-      "}"
-    ],
-    "description": "init React Function Componenet"
-  },
-  "log_with_banner1": {
-    "prefix": "bl1",
-    "body": [
-      "console.log('#########################')",
-      "console.log('#########################')",
-      "console.log('#########################')",
-      "console.log('${1} : ', ${1})",
-      "console.log('#########################')",
-      "console.log('#########################')",
-      "console.log('#########################')"
-    ],
-    "description": "Banner log1"
-  },
-  "log_with_banner2": {
-    "prefix": "bl2",
-    "body": [
-      "console.log('========================')",
-      "console.log('========================')",
-      "console.log('========================')",
-      "console.log('${1} : ', ${1})",
-      "console.log('========================')",
-      "console.log('========================')",
-      "console.log('========================')"
-    ],
-    "description": "Banner log2"
-  },
-  "log_with_banner3": {
-    "prefix": "bl3",
-    "body": [
-      "console.log('++++++++++++++++++++++++')",
-      "console.log('++++++++++++++++++++++++')",
-      "console.log('++++++++++++++++++++++++')",
-      "console.log('${1} : ', ${1})",
-      "console.log('++++++++++++++++++++++++')",
-      "console.log('++++++++++++++++++++++++')",
-      "console.log('++++++++++++++++++++++++')"
-    ],
-    "description": "Banner log2"
-  },
-  "LF_ENUM_GENERATE": {
-    "prefix": "lfEg",
-    "body": [
-      "",
-      "enum ${1}TYPE_ENUM {",
-      "  // ENUM 값 추가",
-      "  NONE = \"\",",
-      "}",
-      "",
-      "export interface ${2}Props {",
-      "    // 속성 추가",
-      "}",
-      "",
-      "type ${3}Type = Record<${1}TYPE_ENUM, ${2}Props>;",
-      "",
-      "const ${4}: ${3}Type = {",
-      "  [${1}TYPE_ENUM.NONE]: {",
-      "    // 속성 추가",
-      "  },",
-      "};",
-      "",
-      "export const get${5}Type = (type: string | null | undefined) => {",
-      "  if (!type) return ${4}[${1}TYPE_ENUM.NONE];",
-      "",
-      "  if ((Object.values(${1}TYPE_ENUM) as string[]).includes(type))",
-      "    return ${4}[type as ${2}Props];",
-      "",
-      "  return ${4}[${1}TYPE_ENUM.NONE];",
-      "};",
-      "",
-      "export const useMemo${5}Type = (",
-      "  type: string | null | undefined",
-      "): ${2}Props => {",
-      "  return useMemo(() => get${5}Type(type), [type]);",
-      "};",
-      ""
-    ],
-    "description": "LF_ENUM_GENERATE"
-  }
+    "module_className": {
+        "prefix": "mc",
+        "body": "className={${1}}"
+    },
+    "classname": {
+        "prefix": "cN",
+        "body": "className=\"${1}\"",
+        "description": "classname"
+    },
+    "react_basic_snippet": {
+        "prefix": "rbs",
+        "body": [
+            "const ${TM_FILENAME} = () => {",
+            "    return (",
+            "        <div>",
+            "            ${1}",
+            "        </div>        ",
+            "    )",
+            "}",
+            "",
+            "export default ${TM_FILENAME};"
+        ],
+        "description": "react_basic_snippet"
+    },
+    "Log": {
+        "prefix": "log",
+        "body": "console.log(${1})",
+        "description": "console.log"
+    },
+    "Logo": {
+        "prefix": "log",
+        "body": "console.log('${1} : ', ${1})",
+        "description": "console.log"
+    },
+    "Log_Line": {
+        "prefix": "blog",
+        "body": "console.log('${TM_LINE_NUMBER} : ', {${1}})",
+        "description": "console.log"
+    },
+    "Log_File": {
+        "prefix": "clog",
+        "body": [
+            "console.log('${TM_FILENAME}_#${TM_LINE_NUMBER} : ', {${1:var}});"
+        ]
+    },
+    "Log_FilePath": {
+        "prefix": "flog",
+        "body": [
+            "console.log('${TM_FILEPATH}');"
+        ]
+    },
+    "fileName": {
+        "prefix": "fn",
+        "body": "${TM_FILENAME}"
+    },
+    "filepath": {
+        "prefix": "fp",
+        "body": "${TM_FILEPATH}"
+    },
+    "state": {
+        "prefix": "useS",
+        "body": "const [${1}, ${2}] = useState${3}()",
+        "description": "init useState"
+    },
+    "effect": {
+        "prefix": "useE",
+        "body": "useEffect${1}(() => {${2}},[])",
+        "description": "init useEffect"
+    },
+    "arrow_function": {
+        "prefix": "awf",
+        "body": "const ${1} = () => { ${2} }",
+        "description": "init arrow Function"
+    },
+    "arrow_react_component": {
+        "prefix": "rfc",
+        "body": [
+            "export const ${1} = () => {",
+            "",
+            "   return (",
+            "    <div>${2}</div>",
+            "   )",
+            "",
+            "}"
+        ],
+        "description": "init React Function Componenet"
+    },
+    "log_with_banner1": {
+        "prefix": "bl1",
+        "body": [
+            "console.log('#########################')",
+            "console.log('#########################')",
+            "console.log('#########################')",
+            "console.log('${1} : ', ${1})",
+            "console.log('#########################')",
+            "console.log('#########################')",
+            "console.log('#########################')"
+        ],
+        "description": "Banner log1"
+    },
+    "log_with_banner2": {
+        "prefix": "bl2",
+        "body": [
+            "console.log('========================')",
+            "console.log('========================')",
+            "console.log('========================')",
+            "console.log('${1} : ', ${1})",
+            "console.log('========================')",
+            "console.log('========================')",
+            "console.log('========================')"
+        ],
+        "description": "Banner log2"
+    },
+    "log_with_banner3": {
+        "prefix": "bl3",
+        "body": [
+            "console.log('++++++++++++++++++++++++')",
+            "console.log('++++++++++++++++++++++++')",
+            "console.log('++++++++++++++++++++++++')",
+            "console.log('${1} : ', ${1})",
+            "console.log('++++++++++++++++++++++++')",
+            "console.log('++++++++++++++++++++++++')",
+            "console.log('++++++++++++++++++++++++')"
+        ],
+        "description": "Banner log2"
+    },
+    "ENUM_PATTERN_GENERATE": {
+        "prefix": "Eg",
+        "body": [
+            "",
+            "enum ${1}TYPE_ENUM {",
+            "  // ENUM 값 추가",
+            "  NONE = \"\",",
+            "}",
+            "",
+            "export interface ${2}Props {",
+            "    // 속성 추가",
+            "}",
+            "",
+            "type ${3}Type = Record<${1}TYPE_ENUM, ${2}Props>;",
+            "",
+            "const ${4}: ${3}Type = {",
+            "  [${1}TYPE_ENUM.NONE]: {",
+            "    // 속성 추가",
+            "  },",
+            "};",
+            "",
+            "export const get${5}Type = (type: string | null | undefined) => {",
+            "  if (!type) return ${4}[${1}TYPE_ENUM.NONE];",
+            "",
+            "  if ((Object.values(${1}TYPE_ENUM) as string[]).includes(type))",
+            "    return ${4}[type as ${2}Props];",
+            "",
+            "  return ${4}[${1}TYPE_ENUM.NONE];",
+            "};",
+            "",
+            "export const useMemo${5}Type = (",
+            "  type: string | null | undefined",
+            "): ${2}Props => {",
+            "  return useMemo(() => get${5}Type(type), [type]);",
+            "};",
+            ""
+        ],
+        "description": "ENUM_PATTERN_GENERATE"
+    },
+    "LF_INTERNAL_ERROR": {
+        "prefix": "iE",
+        "body": [
+            "const handle500Error = useInternalServerError();",
+            "handle500Error({ status });",
+            ""
+        ]
+    }
 }
