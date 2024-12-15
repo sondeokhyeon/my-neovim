@@ -31,10 +31,6 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
--- number Toggle
-keymap.set("n", "<Leader>n[", ":set number norelativenumber")
-keymap.set("n", "<Leader>n]", ":set number relativenumber")
-
 -- Quit
 keymap.set("n", "qq", "<CMD>q<CR>")
 
