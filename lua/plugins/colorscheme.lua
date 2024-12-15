@@ -9,12 +9,6 @@ return {
       }
     end,
   },
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "gruvbox",
-  --   },
-  -- },
   {
     "catppuccin/nvim",
     name = "catppuccin",
