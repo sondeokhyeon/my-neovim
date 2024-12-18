@@ -125,7 +125,7 @@ source $ZSH/oh-my-zsh.sh
 # }
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
-# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+#export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 
 prompt_context() {}
