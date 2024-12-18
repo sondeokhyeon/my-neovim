@@ -154,10 +154,10 @@ return {
             single_file_support = true,
           },
           -- dockerls end
-          kotlin_language_server = {
-            cmd = { "kotlin-language-server", "--stdio" },
-            filetypes = { "kotlin" },
-          },
+          -- kotlin_language_server = {
+          --   cmd = { "kotlin-language-server", "--stdio" },
+          --   filetypes = { "kotlin" },
+          -- },
         }, -- servers
       }, -- opts
     },
