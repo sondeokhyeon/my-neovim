@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -17,8 +17,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # Set list of themes to pick from when loading at random
 
-#ZSH_THEME="murilasso"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -123,7 +123,7 @@ source $ZSH/oh-my-zsh.sh
 #     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
 #   fi
 # }
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 #export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
@@ -139,11 +139,13 @@ eval $(thefuck --alias)
 alias vim="nvim"
 alias vi="nvim"
 
-alias pnr="git pull && npm run dev"
-alias gap="git pull && git submodule update --remote"
+# alias pnr="git pull && npm run dev"
+# alias pn2="git pull && npm run dev2"
+# alias gap="git pull && git submodule update --remote"
 alias cr="clear"
 alias hq="harlequin --theme emacs"
 alias gbc="git branch "
+alias fzfa="fzf "
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
@@ -221,3 +223,13 @@ HIST_FILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
