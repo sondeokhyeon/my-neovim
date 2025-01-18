@@ -29,13 +29,14 @@ require("lazy").setup({
     { import = "plugins" },
   },
   defaults = {
-    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
-    -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
+    autocmds = true, -- lazyvim.config.autocmds
+    keymaps = true, -- lazyvim.config.keymaps
     lazy = false,
-    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
-    -- have outdated releases, which may break your Neovim install.
     version = false, -- always use the latest git commit
-    -- version = "*", -- try installing the latest stable version for plugins that support semver
+  },
+  news = {
+    lazyvim = true,
+    neovim = false,
   },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
@@ -51,6 +52,110 @@ require("lazy").setup({
         "tutor",
         "zipPlugin",
       },
+    },
+  },
+  icons = {
+    misc = {
+      dots = "󰇘",
+    },
+    ft = {
+      octo = "",
+    },
+    dap = {
+      Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
+      Breakpoint = " ",
+      BreakpointCondition = " ",
+      BreakpointRejected = { " ", "DiagnosticError" },
+      LogPoint = ".>",
+    },
+    diagnostics = {
+      Error = " ",
+      Warn = " ",
+      Hint = " ",
+      Info = " ",
+    },
+    git = {
+      added = " ",
+      modified = " ",
+      removed = " ",
+    },
+    kinds = {
+      Array = " ",
+      Boolean = "󰨙 ",
+      Class = " ",
+      Codeium = "󰘦 ",
+      Color = " ",
+      Control = " ",
+      Collapsed = " ",
+      Constant = "󰏿 ",
+      Constructor = " ",
+      Copilot = " ",
+      Enum = " ",
+      EnumMember = " ",
+      Event = " ",
+      Field = " ",
+      File = " ",
+      Folder = " ",
+      Function = "󰊕 ",
+      Interface = " ",
+      Key = " ",
+      Keyword = " ",
+      Method = "󰊕 ",
+      Module = " ",
+      Namespace = "󰦮 ",
+      Null = " ",
+      Number = "󰎠 ",
+      Object = " ",
+      Operator = " ",
+      Package = " ",
+      Property = " ",
+      Reference = " ",
+      Snippet = "󱄽 ",
+      String = " ",
+      Struct = "󰆼 ",
+      Supermaven = " ",
+      TabNine = "󰏚 ",
+      Text = " ",
+      TypeParameter = " ",
+      Unit = " ",
+      Value = " ",
+      Variable = "󰀫 ",
+    },
+  },
+  ---@type table<string, string[]|boolean>?
+  kind_filter = {
+    default = {
+      "Class",
+      "Constructor",
+      "Enum",
+      "Field",
+      "Function",
+      "Interface",
+      "Method",
+      "Module",
+      "Namespace",
+      "Package",
+      "Property",
+      "Struct",
+      "Trait",
+    },
+    markdown = false,
+    help = false,
+    -- you can specify a different filter for each filetype
+    lua = {
+      "Class",
+      "Constructor",
+      "Enum",
+      "Field",
+      "Function",
+      "Interface",
+      "Method",
+      "Module",
+      "Namespace",
+      -- "Package", -- remove package since luals uses it for control flow structures
+      "Property",
+      "Struct",
+      "Trait",
     },
   },
 })
