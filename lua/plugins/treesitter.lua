@@ -14,7 +14,6 @@ return {
         "go",
         "graphql",
         "http",
-        "java",
         "php",
         "rust",
         "scss",
