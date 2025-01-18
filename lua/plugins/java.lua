@@ -1,9 +1,62 @@
 return {
-  "nvim-java/nvim-java",
-  config = function()
-    local lspConfig = require("lspconfig")
-    local java = require("java")
-    java.setup()
-    lspConfig.jdtls.setup({})
-  end,
+  -- "nvim-java/nvim-java",
+  -- lazy = false,
+  -- config = function()
+  --   local lspConfig = require("lspconfig")
+  --   local java = require("java")
+  --   java.setup()
+  --   lspConfig.jdtls.setup({})
+  -- end,
 }
+-- return {
+--   "nvim-java/nvim-java",
+--   config = false,
+--   dependencies = {
+--     {
+--       "neovim/nvim-lspconfig",
+--       opts = {
+--         servers = {
+--           jdtls = {
+--             -- Your custom jdtls settings goes here
+--           },
+--         },
+--         setup = {
+--           jdtls = function()
+--             require("java").setup({
+--
+--               -- Your custom nvim-java configuration goes here
+--             })
+--           end,
+--         },
+--       },
+--     },
+--   },
+-- {
+--   "JavaHello/spring-boot.nvim",
+--   ft = "java",
+--   dependencies = {
+--     "mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
+--     "ibhagwan/fzf-lua", -- 可选
+--   },
+--   init = function()
+--     vim.g.spring_boot = {
+--       jdt_extensions_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
+--       jdt_extensions_jars = {
+--         "io.projectreactor.reactor-core.jar",
+--         "org.reactivestreams.reactive-streams.jar",
+--         "jdt-ls-commons.jar",
+--         "jdt-ls-extension.jar",
+--         "sts-gradle-tooling.jar",
+--       },
+--     }
+--   end,
+--   config = function()
+--     require("spring_boot").setup({
+--       ls_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
+--       jdtls_name = "jdtls",
+--       log_file = nil,
+--       java_cmd = nil,
+--     })
+--   end,
+-- },
+-- }
