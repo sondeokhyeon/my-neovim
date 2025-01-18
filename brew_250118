@@ -1,0 +1,217 @@
+tap "danielgatis/imgcat"
+tap "fkhadra/cli"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "julien040/anyquery"
+tap "kenanbek/dbui", "https://github.com/kenanbek/dbui"
+tap "nikitabobko/tap"
+tap "oven-sh/bun"
+tap "spring-io/tap"
+# Run your GitHub Actions locally
+brew "act"
+# Shell extension to jump to frequently used directories
+brew "autojump"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Emacs dependency management
+brew "cask"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
+brew "chafa"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
+# Development kit for the Java programming language
+brew "openjdk@17"
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle@7"
+# Java SQL database
+brew "h2"
+# Post-modern modal text editor
+brew "helix"
+# Improved top (interactive process viewer)
+brew "htop"
+# Apache HTTP server
+brew "httpd"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@75"
+# Manage your Java environment
+brew "jenv"
+# Statically typed programming language for the JVM
+brew "kotlin"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Java-based project management
+brew "maven"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Manage multiple Node.js versions
+brew "nvm"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# Theme for zsh
+brew "powerlevel10k"
+# Python version management
+brew "pyenv"
+# File browser
+brew "ranger"
+# Persistent key-value database, with built-in net interface
+brew "redis"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Display and control your Android device
+brew "scrcpy"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
+# Display images and gifs in your terminal
+brew "danielgatis/imgcat/imgcat"
+# Beautiful TUI for caniuse
+brew "fkhadra/cli/caniuse"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
+brew "spring-io/tap/spring-boot"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
+# Android SDK component
+cask "android-platform-tools"
+# Tools for building Android applications
+cask "android-studio"
+# UI toolkit for building applications for mobile, web and desktop
+cask "flutter"
+cask "font-meslo-lg-nerd-font"
+# Java IDE by JetBrains
+cask "intellij-idea"
+# GPU-based terminal emulator
+cask "kitty"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Multi-platform web browser
+cask "microsoft-edge"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
+# App to write, plan, collaborate, and get organised
+cask "notion"
+# Graphical client for Git version control
+cask "sourcetree"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@8"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
+# Multiplayer code editor
+cask "zed"
+vscode "alefragnani.bookmarks"
+vscode "alefragnani.project-manager"
+vscode "alfredbirk.tailwind-documentation"
+vscode "bierner.docs-view"
+vscode "bradlc.vscode-tailwindcss"
+vscode "chakrounanas.turbo-console-log"
+vscode "christian-kohler.path-intellisense"
+vscode "dart-code.dart-code"
+vscode "dbaeumer.vscode-eslint"
+vscode "deerawan.vscode-faker"
+vscode "donjayamanne.githistory"
+vscode "dsznajder.es7-react-js-snippets"
+vscode "eamodio.gitlens"
+vscode "echoapi.echoapi-for-vscode"
+vscode "ecmel.vscode-html-css"
+vscode "ellreka.tailwindcss-highlight"
+vscode "esbenp.prettier-vscode"
+vscode "firsttris.vscode-jest-runner"
+vscode "formulahendry.auto-rename-tag"
+vscode "formulahendry.code-runner"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-github-actions"
+vscode "gogocrow.webpack-snippets"
+vscode "gruntfuggly.todo-tree"
+vscode "hbenl.vscode-mocha-test-adapter"
+vscode "hbenl.vscode-test-explorer"
+vscode "humao.rest-client"
+vscode "jakewilson.vscode-cdnjs"
+vscode "jannisx11.batch-rename-extension"
+vscode "jeremyrajan.webpack"
+vscode "jonkwheeler.styled-components-snippets"
+vscode "mariusalchimavicius.json-to-ts"
+vscode "maxcutlyp.dotenv-autocomplete"
+vscode "meganrogge.template-string-converter"
+vscode "mhutchie.git-graph"
+vscode "mikestead.dotenv"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-ceintl.vscode-language-pack-ko"
+vscode "ms-playwright.playwright"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode-remote.remote-wsl"
+vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.remote-server"
+vscode "ms-vscode.test-adapter-converter"
+vscode "ms-vscode.vscode-typescript-next"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "oderwat.indent-rainbow"
+vscode "orta.vscode-jest"
+vscode "perkovec.emoji"
+vscode "pflannery.vscode-versionlens"
+vscode "pkief.material-icon-theme"
+vscode "prisma.prisma"
+vscode "quicktype.quicktype"
+vscode "redhat.java"
+vscode "redhat.vscode-community-server-connector"
+vscode "redhat.vscode-rsp-ui"
+vscode "ritwickdey.liveserver"
+vscode "roscop.activefileinstatusbar"
+vscode "ryu1kn.partial-diff"
+vscode "sachinb94.css-tree"
+vscode "steoates.autoimport"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "techer.open-in-browser"
+vscode "urin.vscode-web-visual-editor"
+vscode "usernamehw.errorlens"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vmware.vscode-spring-boot"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
+vscode "vscjava.vscode-spring-initializr"
+vscode "vscodevim.vim"
+vscode "wallabyjs.console-ninja"
+vscode "wallabyjs.quokka-vscode"
+vscode "wix.vscode-import-cost"
+vscode "yzhang.markdown-all-in-one"
+vscode "zainchen.json"
+vscode "zhucy.project-tree"
