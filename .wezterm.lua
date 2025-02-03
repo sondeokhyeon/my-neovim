@@ -11,7 +11,6 @@ config.enable_tab_bar = true
 
 -- window deco
 config.window_decorations = "RESIZE"
-config.enable_tab_bar = true
 
 -- font size
 config.font_size = 14
