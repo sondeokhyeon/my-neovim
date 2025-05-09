@@ -59,3 +59,25 @@ keymap.set("n", "sk", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
 keymap.set("n", "sj", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
 keymap.set("n", "sh", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
 keymap.set("n", "sl", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
+
+-- signature_help
+keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
+
+-- rename
+keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>")
+
+-- code_action
+keymap.set(
+	"n",
+	"<F3>",
+	"<cmd>lua vim.lsp.buf.code_action({ apply = true, context = { only = { 'source' }, diagnostics = {},},})<cr>"
+)
+
+-- code_action
+keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+
+-- references
+keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
+
+-- implementation
+keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
