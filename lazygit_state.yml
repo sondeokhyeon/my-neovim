@@ -1,0 +1,17 @@
+gui:
+  language: ko
+
+os:
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim --line={{line}} {{filename}}"
+  editAtLineAndWait: "nvim --block --line={{line}} {{filename}}"
+  # editInTerminal: true
+  openDirInEditor: "nvim {{dir}}"
+
+git:
+  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=format:'%Y-%m-%d %H:%M:%S' --pretty=medium {{branchName}} --
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=format:'%Y-%m-%d %H:%M:%S'   --pretty=medium
+# os:
+#   edit: "nvim"
+#   editPreset: "nvim"
