@@ -30,7 +30,7 @@
 [init]
 	defaultBranch = main
 
-core]
+[core]
     pager = delta
     ignorecase = false
 
