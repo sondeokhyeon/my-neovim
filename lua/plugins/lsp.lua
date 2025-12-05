@@ -33,10 +33,19 @@ return {
 			inlay_hints = {
 				enabled = true,
 			},
-			-- add any global capabilities here
-			capabilities = vim.lsp.protocol.make_client_capabilities(),
 			-- LSP Server Settings
 			servers = {
+				-- Global settings for all servers
+				["*"] = {
+					capabilities = {
+						textDocument = {
+							foldingRange = {
+								dynamicRegistration = false,
+								lineFoldingOnly = true,
+							},
+						},
+					},
+				},
 				lua_ls = {
 					-- keys = {},
 					settings = {
@@ -59,7 +68,7 @@ return {
 					end,
 				},
 				--tailwindcss
-				tsserver = {
+				ts_ls = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
@@ -86,7 +95,7 @@ return {
 					},
 					single_file_support = true,
 				},
-				-- tsserver
+				-- ts_ls
 				html = {},
 				-- html
 				emmet_language_server = {},

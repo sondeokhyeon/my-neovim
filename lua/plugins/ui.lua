@@ -62,7 +62,8 @@ return {
 		opts = {
 			options = {
 				mode = "tabs",
-				separator_style = "thin",
+				numbers = "ordinal",
+				separator_style = "thick",
 				show_buffer_close_icons = true,
 				show_close_icon = false,
 				show_buffer_icons = true,
@@ -74,6 +75,22 @@ return {
 				toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
 			},
 		},
+	},
+	-- bufferin 설치
+	{
+		"wasabeef/bufferin.nvim",
+		cmd = "Bufferin", -- 명령어로 토글
+		dependencies = { "nvim-tree/nvim-web-devicons", "akinsho/bufferline.nvim" },
+		config = function()
+			require("bufferin").setup({
+				-- 옵션 예시
+				show_window_layout = true, -- floating 창에 layout map 표시
+				-- 기타 기본 설정 그대로 사용 가능
+			})
+
+			-- 편하게 열기 위한 키맵 (예: <leader>b)
+			vim.keymap.set("n", "<leader>b", "<cmd>Bufferin<cr>", { desc = "Toggle Bufferin" })
+		end,
 	},
 	{
 		"rcarriga/nvim-notify",
