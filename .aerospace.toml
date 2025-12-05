@@ -1,0 +1,121 @@
+
+# ==============================
+# AeroSpace Full Config (Hybrid Vim Style)
+# - 외장 모니터 / 내장 모니터 매핑 포함
+# - 기본 기능 유지
+# - vim 스타일 키바인딩 적용
+# 파일 위치: ~/.aerospace.toml
+# ==============================
+
+# === Top-level 글로벌 설정 ===
+start-at-login = false
+automatically-unhide-macos-hidden-apps = false
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 50
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# 마우스 포커스 이동 시 커서 위치 자동 이동
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# === 워크스페이스 ↔ 모니터 매핑 ===
+[workspace-to-monitor-force-assignment]
+web  = "Built-in Retina Display"
+chat = "Built-in Retina Display"
+# dev  = "LF24T35"
+# docs = "LF24T35"
+dev  = "DELL SE2722H"
+docs = "DELL SE2722H"
+
+# === 키맵 & 기본 설정 ===
+[key-mapping]
+preset = 'qwerty'
+
+[gaps]
+inner.horizontal = 4
+inner.vertical = 4
+outer.left = 8
+outer.bottom = 8
+outer.top = 8
+outer.right = 8
+
+# ==============================
+# 🔹 메인 키바인딩 (Vim 스타일)
+# ==============================
+[mode.main.binding]
+
+
+
+# 🧭 포커스 이동 (hjkl)
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# 📦 창 이동 (hjkl)
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
+
+# 📏 창 크기 조절
+ctrl-alt-h = 'resize smart -50'  # 좌
+ctrl-alt-l = 'resize smart +50'  # 우
+ctrl-alt-j = 'resize smart -50'  # 아래
+ctrl-alt-k = 'resize smart +50'  # 위
+
+# 🧱 레이아웃 전환
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+# 🪟 플로팅 모드 토글 (floating ↔ tiling)
+alt-shift-f = ['layout floating tiling']
+
+# 전체화면 토글
+ctrl-alt-f = 'fullscreen'  
+
+# 🔢 워크스페이스 전환 (외장/내장 매핑 반영)
+alt-1 = 'workspace web'
+alt-2 = 'workspace chat'
+alt-3 = 'workspace config'
+alt-4 = 'workspace dev'
+alt-5 = 'workspace docs'
+
+# 🧭 창을 다른 워크스페이스로 이동
+alt-shift-1 = 'move-node-to-workspace web'
+alt-shift-2 = 'move-node-to-workspace chat'
+alt-shift-3 = 'move-node-to-workspace config'
+alt-shift-4 = 'move-node-to-workspace dev'
+alt-shift-5 = 'move-node-to-workspace docs'
+
+# ↔️ 최근 워크스페이스 전환 (백/포스)
+alt-tab = 'workspace-back-and-forth'
+
+# 🖥️ 워크스페이스를 다른 모니터로 이동
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# 🧩 서비스 모드 진입 (리셋 등)
+alt-semicolon = 'mode service'
+
+# ==============================
+# 🔹 서비스 모드
+# ==============================
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']  # 레이아웃 리셋
+f = ['layout floating tiling', 'mode main']  # 플로팅 토글
+backspace = ['close-all-windows-but-current', 'mode main']
+
+alt-h = ['join-with left', 'mode main']
+alt-j = ['join-with down', 'mode main']
+alt-k = ['join-with up', 'mode main']
+alt-l = ['join-with right', 'mode main']
+
+# 볼륨 제어
+down = 'volume down'
+up = 'volume up'
+shift-down = ['volume set 0', 'mode main']
+
+# bind main alt-shift - r { reload-config }
