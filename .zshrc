@@ -233,3 +233,9 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+alias lint-e="npx eslint --quiet ."
