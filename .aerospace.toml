@@ -1,4 +1,3 @@
-
 # ==============================
 # AeroSpace Full Config (Hybrid Vim Style)
 # - 외장 모니터 / 내장 모니터 매핑 포함
@@ -24,10 +23,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [workspace-to-monitor-force-assignment]
 web  = "Built-in Retina Display"
 chat = "Built-in Retina Display"
-# dev  = "LF24T35"
-# docs = "LF24T35"
-dev  = "DELL SE2722H"
-docs = "DELL SE2722H"
+config = "Built-in Retina Display"
+dev  = "LF24T35"
+docs = "LF24T35"
+etc = "LF24T35"
+# dev  = "DELL SE2722H"
+# docs = "DELL SE2722H"
 
 # === 키맵 & 기본 설정 ===
 [key-mapping]
@@ -43,22 +44,20 @@ outer.right = 8
 
 # ==============================
 # 🔹 메인 키바인딩 (Vim 스타일)
-# ==============================
+# ==============================¡¡¡
 [mode.main.binding]
 
-
-
 # 🧭 포커스 이동 (hjkl)
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+ctrl-h = 'focus left'
+ctrl-j = 'focus down'
+ctrl-k = 'focus up'
+ctrl-l = 'focus right'
 
 # 📦 창 이동 (hjkl)
-alt-shift-h = 'move left'
-alt-shift-j = 'move down'
-alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+ctrl-shift-h = 'move left'
+ctrl-shift-j = 'move down'
+ctrl-shift-k = 'move up'
+ctrl-shift-l = 'move right'
 
 # 📏 창 크기 조절
 ctrl-alt-h = 'resize smart -50'  # 좌
@@ -67,37 +66,39 @@ ctrl-alt-j = 'resize smart -50'  # 아래
 ctrl-alt-k = 'resize smart +50'  # 위
 
 # 🧱 레이아웃 전환
-alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+ctrl-slash = 'layout tiles horizontal vertical'
+ctrl-comma = 'layout accordion horizontal vertical'
 
 # 🪟 플로팅 모드 토글 (floating ↔ tiling)
-alt-shift-f = ['layout floating tiling']
+ctrl-shift-f = ['layout floating tiling']
 
 # 전체화면 토글
-ctrl-alt-f = 'fullscreen'  
+ctrl-alt-f = 'fullscreen'
 
 # 🔢 워크스페이스 전환 (외장/내장 매핑 반영)
-alt-1 = 'workspace web'
-alt-2 = 'workspace chat'
-alt-3 = 'workspace config'
-alt-4 = 'workspace dev'
-alt-5 = 'workspace docs'
+ctrl-1 = 'workspace web'
+ctrl-2 = 'workspace chat'
+ctrl-3 = 'workspace config'
+ctrl-8 = 'workspace dev'
+ctrl-9 = 'workspace docs'
+ctrl-0 = 'workspace etc'
 
 # 🧭 창을 다른 워크스페이스로 이동
-alt-shift-1 = 'move-node-to-workspace web'
-alt-shift-2 = 'move-node-to-workspace chat'
-alt-shift-3 = 'move-node-to-workspace config'
-alt-shift-4 = 'move-node-to-workspace dev'
-alt-shift-5 = 'move-node-to-workspace docs'
+ctrl-shift-1 = 'move-node-to-workspace web'
+ctrl-shift-2 = 'move-node-to-workspace chat'
+ctrl-shift-3 = 'move-node-to-workspace config'
+ctrl-shift-8 = 'move-node-to-workspace dev'
+ctrl-shift-9 = 'move-node-to-workspace docs'
+ctrl-shift-0 = 'move-node-to-workspace etc'
 
 # ↔️ 최근 워크스페이스 전환 (백/포스)
-alt-tab = 'workspace-back-and-forth'
+ctrl-tab = 'workspace-back-and-forth'
 
 # 🖥️ 워크스페이스를 다른 모니터로 이동
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+ctrl-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # 🧩 서비스 모드 진입 (리셋 등)
-alt-semicolon = 'mode service'
+ctrl-semicolon = 'mode service'
 
 # ==============================
 # 🔹 서비스 모드
@@ -108,14 +109,14 @@ r = ['flatten-workspace-tree', 'mode main']  # 레이아웃 리셋
 f = ['layout floating tiling', 'mode main']  # 플로팅 토글
 backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-h = ['join-with left', 'mode main']
-alt-j = ['join-with down', 'mode main']
-alt-k = ['join-with up', 'mode main']
-alt-l = ['join-with right', 'mode main']
+ctrl-h = ['join-with left', 'mode main']
+ctrl-j = ['join-with down', 'mode main']
+ctrl-k = ['join-with up', 'mode main']
+ctrl-l = ['join-with right', 'mode main']
 
 # 볼륨 제어
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
-# bind main alt-shift - r { reload-config }
+# bind main ctrl-shift - r { reload-config }
