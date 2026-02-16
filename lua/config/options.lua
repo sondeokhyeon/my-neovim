@@ -41,6 +41,10 @@ vim.opt.splitkeep = "cursor"
 -- vim.opt.mouse = ""
 vim.opt.conceallevel = 2
 
+vim.opt.textwidth = 100
+vim.opt.wrap = true
+vim.opt.linebreak = true -- Breaks at words, not mid-word
+
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
