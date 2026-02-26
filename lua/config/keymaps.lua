@@ -72,7 +72,6 @@ keymap.set(
 	"<F3>",
 	"<cmd>lua vim.lsp.buf.code_action({ apply = true, context = { only = { 'source' }, diagnostics = {},},})<cr>"
 )
-
 -- code_action
 keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 
@@ -81,3 +80,9 @@ keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
 
 -- implementation
 keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
+
+-- terminal navigation
+keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]])
+keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]])
+keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
+keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]])
