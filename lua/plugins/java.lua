@@ -1,62 +1,29 @@
 return {
-  -- "nvim-java/nvim-java",
-  -- lazy = false,
-  -- config = function()
-  --   local lspConfig = require("lspconfig")
-  --   local java = require("java")
-  --   java.setup()
-  --   lspConfig.jdtls.setup({})
-  -- end,
+  {
+    "mfussenegger/nvim-jdtls",
+    opts = function(_, opts)
+      local spring_boot_ok, spring_boot = pcall(require, "spring_boot")
+      if not spring_boot_ok then
+        return opts
+      end
+      local spring_jars = spring_boot.java_extensions()
+      -- opts.jdtls를 함수로 설정하여 기존 config(DAP/test bundles 포함)에 spring-boot JAR 추가
+      local orig_jdtls = opts.jdtls
+      opts.jdtls = function(config)
+        if orig_jdtls then
+          if type(orig_jdtls) == "function" then
+            config = orig_jdtls(config) or config
+          else
+            config = vim.tbl_deep_extend("force", config, orig_jdtls)
+          end
+        end
+        local bundles = config.init_options and config.init_options.bundles or {}
+        vim.list_extend(bundles, spring_jars)
+        config.init_options = config.init_options or {}
+        config.init_options.bundles = bundles
+        return config
+      end
+      return opts
+    end,
+  },
 }
--- return {
---   "nvim-java/nvim-java",
---   config = false,
---   dependencies = {
---     {
---       "neovim/nvim-lspconfig",
---       opts = {
---         servers = {
---           jdtls = {
---             -- Your custom jdtls settings goes here
---           },
---         },
---         setup = {
---           jdtls = function()
---             require("java").setup({
---
---               -- Your custom nvim-java configuration goes here
---             })
---           end,
---         },
---       },
---     },
---   },
--- {
---   "JavaHello/spring-boot.nvim",
---   ft = "java",
---   dependencies = {
---     "mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
---     "ibhagwan/fzf-lua", -- 可选
---   },
---   init = function()
---     vim.g.spring_boot = {
---       jdt_extensions_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
---       jdt_extensions_jars = {
---         "io.projectreactor.reactor-core.jar",
---         "org.reactivestreams.reactive-streams.jar",
---         "jdt-ls-commons.jar",
---         "jdt-ls-extension.jar",
---         "sts-gradle-tooling.jar",
---       },
---     }
---   end,
---   config = function()
---     require("spring_boot").setup({
---       ls_path = nil, -- 默认使用 ~/.vscode/extensions/vmware.vscode-spring-boot-x.xx.x
---       jdtls_name = "jdtls",
---       log_file = nil,
---       java_cmd = nil,
---     })
---   end,
--- },
--- }

@@ -52,6 +52,8 @@ return {
       css               = { "biome-check", "prettier", stop_after_first = true },
       graphql           = { "biome-check", "prettier", stop_after_first = true },
       vue               = { "biome-check", "prettier", stop_after_first = true },
+      -- java
+      java              = { "google-java-format" },
       -- prettier 전용 filetypes (biome 미지원)
       html              = { "prettier" },
       markdown          = { "prettier" },

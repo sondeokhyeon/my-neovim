@@ -1,6 +1,13 @@
 return {
 	-- tools
-	"mason-org/mason.nvim",
+	{
+		"mason-org/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"google-java-format",
+			},
+		},
+	},
 	"mason-org/mason-lspconfig.nvim",
 	-- { "mason-org/mason.nvim", version = "0.11.0" },
 	-- { "mason-org/mason-lspconfig.nvim", version = "1.32.0" },
@@ -10,15 +17,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		---@class PluginLspOpts
-		-- dependencies = {
-		--   "mfussenegger/nvim-jdtls", -- or nvim-java, nvim-lspconfig
-		-- },
-		-- config = function()
-		-- local lspConfig = require("lspconfig")
-		-- local java = require("java")
-		-- java.setup()
-		-- lspConfig.jdtls.setup({})
-		-- end,
 		opts = {
 			diagnostics = {
 				underline = true,
@@ -107,14 +105,21 @@ return {
 								["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
 								["https://json.schemastore.org/ansible-stable-2.9.json"] = "/*.ansible.yaml",
 								["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-								-- schemas = {
-								--   kubernetes = "/*.k8s.yaml",
-								--   ansible = "/*.ansible.yaml",
-								--   github = "/.github/workflows/*",
-								-- },
 							},
 						},
 					},
+					-- application.yml에서 yamlls 비활성화 (spring-boot LS가 처리)
+					on_attach = function(client, bufnr)
+						local filename = vim.api.nvim_buf_get_name(bufnr)
+						if
+							string.match(filename, "application.*%.ya?ml$")
+							or string.match(filename, "bootstrap.*%.ya?ml$")
+						then
+							vim.defer_fn(function()
+								vim.lsp.buf_detach_client(bufnr, client.id)
+							end, 100)
+						end
+					end,
 				},
 				-- yamlls
 				docker_compose_language_service = {
