@@ -131,6 +131,8 @@ return {
 					single_file_support = true,
 				},
 				-- dockerls end
+				biome = {},
+				-- biome LSP: biome.json 있는 프로젝트에서 자동 활성화 (parse error 있어도 포맷 가능)
 				-- kotlin_language_server = {
 				--   cmd = { "kotlin-language-server", "--stdio" },
 				--   filetypes = { "kotlin" },

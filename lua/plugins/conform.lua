@@ -33,47 +33,42 @@ return {
       })
     end)
   end,
-  opts = function()
-    local plugin = require("lazy.core.config").plugins["conform.nvim"]
-    -- if plugin.config ~= M.setup then
-    --   LazyVim.error({
-    --     "Don't set `plugin.config` for `conform.nvim`.\n",
-    --     "This will break **LazyVim** formatting.\n",
-    --     "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
-    --   }, { title = "LazyVim" })
-    -- end
-    ---@type conform.setupOpts
-    local opts = {
-      default_format_opts = {
-        timeout_ms = 3000,
-        async = false, -- not recommended to change
-        quiet = false, -- not recommended to change
-        lsp_format = "fallback", -- not recommended to change
-      },
-      formatters_by_ft = {
-        lua = { "stylua" },
-        fish = { "fish_indent" },
-        sh = { "shfmt" },
-      },
-      -- The options you set here will be merged with the builtin formatters.
-      -- You can also define any custom formatters here.
-      ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
-      formatters = {
-        injected = { options = { ignore_errors = true } },
-        -- # Example of using dprint only when a dprint.json file is present
-        -- dprint = {
-        --   condition = function(ctx)
-        --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
-        --   end,
-        -- },
-        --
-        -- # Example of using shfmt with extra args
-        -- shfmt = {
-        --   prepend_args = { "-i", "2", "-ci" },
-        -- },
-      },
-    }
+  ---@param _ any
+  ---@param opts conform.setupOpts
+  opts = function(_, opts)
+    -- prettier는 config 파일이 없는 프로젝트에서 실행되지 않도록 설정
+    vim.g.lazyvim_prettier_needs_config = true
+
+    -- biome/prettier extras에서 누적된 formatters(require_cwd, condition 등)를 상속하면서
+    -- formatters_by_ft를 stop_after_first 포함 사용자 설정으로 override
+    -- biome-check: biome format + import sort + safe fixes (biome check --write)
+    opts.formatters_by_ft = vim.tbl_extend("force", opts.formatters_by_ft or {}, {
+      javascript        = { "biome-check", "prettier", stop_after_first = true },
+      javascriptreact   = { "biome-check", "prettier", stop_after_first = true },
+      typescript        = { "biome-check", "prettier", stop_after_first = true },
+      typescriptreact   = { "biome-check", "prettier", stop_after_first = true },
+      json              = { "biome-check", "prettier", stop_after_first = true },
+      jsonc             = { "biome-check", "prettier", stop_after_first = true },
+      css               = { "biome-check", "prettier", stop_after_first = true },
+      graphql           = { "biome-check", "prettier", stop_after_first = true },
+      vue               = { "biome-check", "prettier", stop_after_first = true },
+      -- prettier 전용 filetypes (biome 미지원)
+      html              = { "prettier" },
+      markdown          = { "prettier" },
+      ["markdown.mdx"]  = { "prettier" },
+      yaml              = { "prettier" },
+      scss              = { "prettier" },
+      less              = { "prettier" },
+    })
+
+    -- biome-check: biome.json 없는 프로젝트에서는 실행 안 함 → prettier fallback
+    opts.formatters = opts.formatters or {}
+    opts.formatters.injected = { options = { ignore_errors = true } }
+    opts.formatters["biome-check"] = { require_cwd = true }
+
+    -- 파싱 에러 있는 파일 저장 시 에러 알림 억제
+    opts.notify_on_error = false
+
     return opts
   end,
-  -- config = M.setup,
 }
