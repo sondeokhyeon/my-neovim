@@ -12,6 +12,14 @@ config.enable_tab_bar = true
 -- window deco
 config.window_decorations = "RESIZE"
 
+config.keys = {
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action.SendString("\n"),
+	},
+}
+
 -- font size
 config.font_size = 14
 config.font = wezterm.font_with_fallback({
