@@ -6,6 +6,27 @@ vim.o.background = "light"
 
 vim.g.mapleader = " "
 
+-- OSC 52 clipboard for SSH sessions (yank -> local terminal clipboard)
+-- Requires Nvim 0.10+, outer terminal with OSC 52 support (wezterm/iTerm2/kitty),
+-- and tmux `set -g set-clipboard on` if tmux is in the chain.
+if vim.env.SSH_CONNECTION and vim.fn.has("nvim-0.10") == 1 then
+  vim.opt.clipboard = "unnamedplus"
+  local ok, osc52 = pcall(require, "vim.ui.clipboard.osc52")
+  if ok then
+    vim.g.clipboard = {
+      name = "OSC 52",
+      copy = {
+        ["+"] = osc52.copy("+"),
+        ["*"] = osc52.copy("*"),
+      },
+      paste = {
+        ["+"] = osc52.paste("+"),
+        ["*"] = osc52.paste("*"),
+      },
+    }
+  end
+end
+
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"

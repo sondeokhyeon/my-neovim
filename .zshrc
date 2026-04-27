@@ -81,8 +81,8 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
+  # zsh-syntax-highlighting
+  # zsh-autosuggestions
   autojump
   copypath
   web-search

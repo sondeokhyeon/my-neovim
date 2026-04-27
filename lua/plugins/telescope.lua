@@ -31,12 +31,36 @@ return {
         desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
+        ";F",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.find_files({
+            no_ignore = true,
+            hidden = true,
+            follow = true,
+          })
+        end,
+        desc = "Lists ALL files (ignores .gitignore, includes hidden)",
+      },
+      {
         ";r",
         function()
           local builtin = require("telescope.builtin")
           builtin.live_grep()
         end,
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+      },
+      {
+        ";R",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.live_grep({
+            additional_args = function()
+              return { "--no-ignore", "--hidden" }
+            end,
+          })
+        end,
+        desc = "Live grep ALL files (ignores .gitignore, includes hidden)",
       },
       {
         "\\\\",
@@ -90,7 +114,7 @@ return {
           telescope.extensions.file_browser.file_browser({
             path = "%:p:h",
             cwd = telescope_buffer_dir(),
-            respect_gitignore = false,
+            respect_gitignore = true,
             hidden = true,
             grouped = true,
             previewer = true,
@@ -100,13 +124,34 @@ return {
         end,
         desc = "Open File Browser with the path of the current buffer",
       },
+      {
+        "sF",
+        function()
+          local telescope = require("telescope")
+
+          local function telescope_buffer_dir()
+            return vim.fn.expand("%:p:h")
+          end
+
+          telescope.extensions.file_browser.file_browser({
+            path = "%:p:h",
+            cwd = telescope_buffer_dir(),
+            respect_gitignore = false,
+            hidden = true,
+            grouped = true,
+            previewer = true,
+            initial_mode = "normal",
+            layout_config = { height = 40 },
+          })
+        end,
+        desc = "Open File Browser (ALL files, ignores .gitignore)",
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
       local actions = require("telescope.actions")
-      local fb_actions = require("telescope").extensions.file_browser.actions
 
-      opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
+      opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         wrap_results = true,
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
@@ -124,6 +169,7 @@ return {
           },
         },
       }
+      local fb_actions = require("telescope").extensions.file_browser.actions
       opts.extensions = {
         file_browser = {
           theme = "ivy",
@@ -152,6 +198,8 @@ return {
               end,
               ["<PageUp>"] = actions.preview_scrolling_up,
               ["<PageDown>"] = actions.preview_scrolling_down,
+              ["."] = fb_actions.toggle_respect_gitignore,
+              ["H"] = fb_actions.toggle_hidden,
             },
           },
         },
