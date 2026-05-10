@@ -5,6 +5,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"google-java-format",
+				"vscode-spring-boot-tools",
 			},
 		},
 	},
