@@ -10,8 +10,10 @@ return {
     { "<leader>r", "", desc = "+refactor", mode = { "n", "v" } },
     {
       "<leader>rs",
-      pick,
-      mode = "v",
+      function()
+        require("refactoring").select_refactor()
+      end,
+      mode = { "n", "v" },
       desc = "Refactor",
     },
     {
@@ -116,10 +118,5 @@ return {
   },
   config = function(_, opts)
     require("refactoring").setup(opts)
-    if LazyVim.has("telescope.nvim") then
-      LazyVim.on_load("telescope.nvim", function()
-        require("telescope").load_extension("refactoring")
-      end)
-    end
   end,
 }
