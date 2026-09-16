@@ -1,0 +1,96 @@
+tap "oven-sh/bun"
+tap "xiaomiku01/tap", "https://github.com/XiaoMiku01/homebrew-tap"
+# Shell extension to jump to frequently used directories
+brew "autojump"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Java-based project management
+brew "maven"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Theme for zsh
+brew "powerlevel10k"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Terminal multiplexer
+brew "tmux"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun", trusted: true
+# Userspace RNDIS driver that exposes USB tethering devices as a macOS NIC
+brew "xiaomiku01/tap/tetherkit-cli", trusted: true
+# Web browser focusing on privacy
+cask "brave-browser"
+# Utility that prevents the system from going to sleep
+cask "caffeine"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Online diagram software
+cask "drawio"
+cask "font-meslo-lg-nerd-font"
+# Web browser
+cask "google-chrome"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Multi-platform web browser
+cask "microsoft-edge"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Get up and running with large language models locally
+cask "ollama-app"
+# Open source virtual/remote desktop application
+cask "rustdesk"
+# Tool to reverse the direction of scrolling
+cask "scroll-reverser"
+# Team communication and collaboration software
+cask "slack"
+# Open-source code editor
+cask "visual-studio-code"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm"
+vscode "anthropic.claude-code"
+vscode "egovframework.egovframe-vscode-initializr"
+vscode "janisdd.vscode-edit-csv"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-ceintl.vscode-language-pack-ko"
+vscode "redhat.java"
+vscode "redhat.vscode-community-server-connector"
+vscode "redhat.vscode-rsp-ui"
+vscode "tomoki1207.pdf"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
+vscode "vscjava.vscode-spring-initializr"
+vscode "vue.volar"
+npm "oh-my-claude-sisyphus"
+npm "oh-my-codex"
+npm "pnpm"
+npm "vercel"
