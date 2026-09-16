@@ -1,0 +1,66 @@
+onboarding = false
+
+[theme]
+name = "tokyo-night-day"
+auto_switch = false
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+agent_panel_sort = "spaces"
+[ui.toast]
+delivery = "system"
+
+# ── tmux(~/.tmux.conf) 습관 이식 ─────────────────────────────
+[keys]
+prefix = "ctrl+space"
+
+# 분할: 기본 v / minus 에 tmux " / % 병행
+split_horizontal = ["prefix+minus", "prefix+\""]
+split_vertical   = ["prefix+v", "prefix+%"]
+
+# 리사이즈 = prefix+Shift+hjkl (tmux HJKL). 기본 swap 은 alt 로 이동
+resize_pane_left  = "prefix+shift+h"
+resize_pane_down  = "prefix+shift+j"
+resize_pane_up    = "prefix+shift+k"
+resize_pane_right = "prefix+shift+l"
+swap_pane_left    = "prefix+alt+h"
+swap_pane_down    = "prefix+alt+j"
+swap_pane_up      = "prefix+alt+k"
+swap_pane_right   = "prefix+alt+l"
+
+# 세션(워크스페이스) 생성/전환 — tmux C-n / C-j
+new_workspace    = ["prefix+shift+n", "prefix+ctrl+n"]
+workspace_picker = ["prefix+w", "prefix+ctrl+j"]
+
+[[keys.command]]
+key = "prefix+ctrl+l"
+type = "popup"
+command = "cd \"$HERDR_ACTIVE_PANE_CWD\" && lazygit"
+description = "lazygit"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "prefix+ctrl+y"
+type = "popup"
+command = "cd \"$HERDR_ACTIVE_PANE_CWD\" && yazi"
+description = "yazi"
+width = "90%"
+height = "90%"
+
+[[keys.command]]
+key = "prefix+ctrl+z"
+type = "popup"
+command = "nvim ~/.zshrc"
+description = "edit zshrc"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "prefix+ctrl+t"
+type = "popup"
+command = "cd \"$HERDR_ACTIVE_PANE_CWD\" && zsh"
+description = "scratch shell"
+width = "75%"
+height = "75%"
